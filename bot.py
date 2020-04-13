@@ -14,7 +14,7 @@ def welcome(update, context):
         username = update.message.from_user.username
         firstName = update.message.from_user.first_name
         lastName = update.message.from_user.last_name
-        message = 'Olá, ' + firstName + '!' + ' Olá sou Doutora Aninha Bot, Estou aqui pra te ajudar?'
+        message = 'Olá, ' + firstName + '!' + ' Sou Doutora Aninha Bot, Estou aqui pra te ajudar?'
         context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     except Exception as e:
         print(str(e))
