@@ -1,4 +1,4 @@
-import requests
+#import requests
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
                          RegexHandler, ConversationHandler)
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
@@ -14,7 +14,7 @@ def welcome(update, context):
         username = update.message.from_user.username
         firstName = update.message.from_user.first_name
         lastName = update.message.from_user.last_name
-        message = 'Olá, ' + firstName + '!' + 'digite /feedback para dizer o que achou do nosso tutorial'
+        message = 'Olá, ' + firstName + '!' + 'Olá sou Drinha Aninha Bot, Estou aqui pra te ajudar?'
         context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     except Exception as e:
         print(str(e))
@@ -22,8 +22,7 @@ def welcome(update, context):
 
 def coronaquestions(update, context):
     try:
-        message = """Olá sou Drinha Aninha Bot, Estou aqui pra te ajudar? \n 
-            Escolha uma opção abaixo para começarmos: \n
+        message = """Escolha uma opção abaixo para começarmos: \n
             1 - O que é Coronavirus\n
             2 - Como podemos nos previnir\n
             3 - Você sabia\n"""
@@ -36,20 +35,19 @@ def coronaquestions(update, context):
 def inputCoronaquestions(update, context):
     coronaquestions = update.message.text
     print(coronaquestions)
-    if coronaquestions == "1" 
+    if (coronaquestions == "1" 
     or coronaquestions == "O que é Coronavirus"
     or coronaquestions =="Coronavirus"
-    or coronaquestions == "virus":
+    or coronaquestions == "virus"):
         message = """colocar o que eu quero na resposta 1"""
         context.bot.send_message(chat_id=update.effective_chat.id, text=message)
         return STATE2
-    else:
-        if coronaquestions == "2" 
+    elif (coronaquestions == "2" 
     or coronaquestions == "Como podemos nos previnir"
     or coronaquestions =="prevenção"
-    or coronaquestions == "previnir":
-        message = " colocar o que eu quero responder na numero 2 "
-        context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+    or coronaquestions == "previnir"):
+       message = """colocar o que eu quero na resposta 2"""
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
     return STATE2
 
 def inputCoronaquestions2(update, context):
