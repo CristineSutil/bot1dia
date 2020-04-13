@@ -19,7 +19,6 @@ def welcome(update, context):
     except Exception as e:
         print(str(e))
 
-
 def coronaquestions(update, context):
     try:
         message = """Escolha uma opção abaixo para começarmos: \n
